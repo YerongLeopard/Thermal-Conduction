@@ -1,0 +1,442 @@
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/W32TeX) (format=pdflatex 2015.5.3)  24 MAY 2015 20:51
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**algorithm3.tex
+(./algorithm3.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman-x-2012-05-30, ngerman-x-2012-05-30, ancientgreek, ibycus, arabic, basque, 
+catalan, pinyin, czech, dutch, ukenglish, usenglishmax, farsi, french, galician
+, german, ngerman, swissgerman, monogreek, greek, italian, polish, portuguese, 
+slovak, spanish, loaded.
+(c:/texlive/2012/texmf-dist/tex/latex/revtex/revtex4-1.cls
+Document Class: revtex4-1 2010/07/25/20:33:00 4.1r (http://publish.aps.org/revt
+ex4/ for documentation)
+ Copyright (c) 2009 The American Physical Society.
+ mailto:revtex@aps.org
+ Licensed under the LPPL:
+http://www.ctan.org/tex-archive/macros/latex/base/lppl.txt
+ Arthur Ogawa <arthur_ogawa at sbcglobal dot net>
+ Based on work by David Carlisle <david at dcarlisle.demon.co.uk>.
+ltxutil[2010/07/25/20:33:00 4.1r utilities package (portions licensed from W. E
+. Baxter web at superscript.com)]
+LaTeX Info: Redefining \@centercr on input line 308.
+Class revtex4-1 Info: Repairing broken LaTeX eqnarray on input line 358.
+\eqncolsep=\skip41
+Class revtex4-1 Info: Repairing hyperref-unfriendly LaTeX definition of \mpfoot
+note on input line 433.
+Class revtex4-1 Info: Repairing broken LateX \@sect on input line 755.
+\intertabularlinepenalty=\count79
+\@tbpen=\count80
+\@arstrutbox@hline=\box26
+Class revtex4-1 Info: Repairing broken LaTeX \@xbitor on input line 1786.
+Class revtex4-1 Info: Making \typeout \long on input line 2046.
+ltxfront[2010/07/25/20:33:00 4.1r frontmatter package (AO,DPC)]
+\c@affil=\count81
+\c@collab=\count82
+\absbox=\box27
+ltxgrid[2010/07/25/20:33:00 4.1r page grid package (portions licensed from W. E
+. Baxter web at superscript.com)]
+\c@linecount=\count83
+\output@latex=\toks14
+\box@size@1=\box28
+\box@size@2=\box29
+\@protection@box=\box30
+\@topmark@saved=\toks15
+\footins@saved=\box31
+\footins@recovered=\box32
+\column@recovered=\box33
+\pagesofar=\box34
+\footsofar=\box35
+\pagegrid@col=\count84
+Class revtex4-1 Info: Overriding \@vspace, \@vspacer, \@no@pgbk, \@newline, and
+ \\  on input line 5578.
+\c@part=\count85
+\c@section=\count86
+\c@subsection=\count87
+\c@subsubsection=\count88
+\c@paragraph=\count89
+\c@subparagraph=\count90
+\abovecaptionskip=\skip42
+\belowcaptionskip=\skip43
+\c@figure=\count91
+\fbox@1=\box36
+\c@table=\count92
+\fbox@2=\box37
+\c@video=\count93
+\fbox@4=\box38
+\@bibdataout=\write3
+\widetext@top=\box39
+\widetext@bot=\box40
+Class revtex4-1 Info: Selecting society aps on input line 7542.
+(c:/texlive/2012/texmf-dist/tex/latex/revtex/aps4-1.rtx
+File: aps4-1 2010/07/25/20:33:00 4.1r (http://publish.aps.org/revtex4/ for docu
+mentation)
+Class revtex4-1 Info: RevTeX society APS selected on input line 31.
+)
+Class revtex4-1 Info: Selecting journal prb on input line 7544.
+Class revtex4-1 Info: APS journal PRB selected on input line 7545.
+
+
+Class revtex4-1 Warning: No type size specified, using default 10.
+
+(c:/texlive/2012/texmf-dist/tex/latex/revtex/aps10pt4-1.rtx
+File: aps10pt4-1 2010/07/25/20:33:00 4.1r (http://publish.aps.org/revtex4/ for 
+documentation)
+Class revtex4-1 Info: RevTeX pointsize 10pt selected on input line 30.
+)
+(c:/texlive/2012/texmf-dist/tex/latex/textcase/textcase.sty
+Package: textcase 2004/10/07 v0.07 Text only upper/lower case changing (DPC)
+)
+(c:/texlive/2012/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip10
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+)
+(c:/texlive/2012/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip44
+\bibsep=\skip45
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count94
+)
+Class revtex4-1 Info: Repairing natbib's \BibitemShut on input line 7549.
+
+(c:/texlive/2012/texmf-dist/tex/latex/revtex/revsymb4-1.sty
+Package: revsymb4-1 2010/07/25/20:33:00 4.1r (http://publish.aps.org/revtex4/ f
+or documentation)
+LaTeX Info: Redefining \REV@mathfrak on input line 119.
+))
+(c:/texlive/2012/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
+\LTleft=\skip46
+\LTright=\skip47
+\LTpre=\skip48
+\LTpost=\skip49
+\LTchunksize=\count95
+\LTcapwidth=\dimen102
+\LT@head=\box41
+\LT@firsthead=\box42
+\LT@foot=\box43
+\LT@lastfoot=\box44
+\LT@cols=\count96
+\LT@rows=\count97
+\c@LT@tables=\count98
+\c@LT@chunks=\count99
+\LT@p@ftn=\toks16
+)
+(c:/texlive/2012/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
+\@emptytoks=\toks17
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
+LaTeX Info: Redefining \frak on input line 99.
+LaTeX Info: Redefining \Bbb on input line 101.
+)
+(c:/texlive/2012/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(c:/texlive/2012/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks18
+)
+(c:/texlive/2012/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(c:/texlive/2012/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(c:/texlive/2012/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(c:/texlive/2012/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(c:/texlive/2012/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(c:/texlive/2012/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count100
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(c:/texlive/2012/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
+)
+Class revtex4-1 Info: Patching LaTeX tabular. on input line 18.
+Class revtex4-1 Info: Patching longtable package on input line 18.
+Class revtex4-1 Info: Robustifying \LaTeX's \boldmath command on input line 18.
+
+Class revtex4-1 Info: cite was not loaded (OK!) on input line 18.
+Class revtex4-1 Info: mcite was not loaded (OK!) on input line 18.
+Class revtex4-1 Info: multicol was not loaded (OK!) on input line 18.
+ (./algorithm3.aux
+
+LaTeX Warning: Label `fig:error' multiply defined.
+
+
+LaTeX Warning: Label `fig:cross' multiply defined.
+
+
+LaTeX Warning: Label `fig:powerlaw' multiply defined.
+
+
+LaTeX Warning: Label `fig:error1' multiply defined.
+
+)
+\openout1 = `algorithm3.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+ (c:/texlive/2012/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count101
+\scratchdimen=\dimen105
+\scratchbox=\box45
+\nofMPsegments=\count102
+\nofMParguments=\count103
+\everyMPshowfont=\toks19
+\MPscratchCnt=\count104
+\MPscratchDim=\dimen106
+\MPnumerator=\count105
+\makeMPintoPDFobject=\count106
+\everyMPtoPDFconversion=\toks20
+) (c:/texlive/2012/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(c:/texlive/2012/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(c:/texlive/2012/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(c:/texlive/2012/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(c:/texlive/2012/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(c:/texlive/2012/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(c:/texlive/2012/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(c:/texlive/2012/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(c:/texlive/2012/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(c:/texlive/2012/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+\openout3 = `algorithm3Notes.bib'.
+
+LaTeX Font Info:    Try loading font information for U+msa on input line 34.
+
+(c:/texlive/2012/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 34.
+
+(c:/texlive/2012/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+) [1{c:/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+Overfull \hbox (2.94191pt too wide) in alignment at lines 209--213
+ [][][] []
+ []
+
+[2] <slab.pdf, id=28, 487.8225pt x 171.64125pt>
+File: slab.pdf Graphic file (type pdf)
+ <use slab.pdf>
+Package pdftex.def Info: slab.pdf used on input line 281.
+(pdftex.def)             Requested size: 487.8213pt x 171.64081pt.
+
+Overfull \hbox (9.00156pt too wide) in paragraph at lines 281--282
+ [][] 
+ []
+
+<spheres.pdf, id=29, 346.29375pt x 729.72626pt>
+File: spheres.pdf Graphic file (type pdf)
+ <use spheres.pdf>
+Package pdftex.def Info: spheres.pdf used on input line 335.
+(pdftex.def)             Requested size: 346.2929pt x 729.72449pt.
+
+Overfull \hbox (8.99603pt too wide) in paragraph at lines 335--336
+ [][] 
+ []
+
+[3 <./slab.pdf> <./spheres.pdf>]
+
+LaTeX Warning: Command \r invalid in math mode on input line 469.
+
+<amplitude6.pdf, id=41, 551.05875pt x 424.58624pt>
+File: amplitude6.pdf Graphic file (type pdf)
+ <use amplitude6.pdf>
+Package pdftex.def Info: amplitude6.pdf used on input line 476.
+(pdftex.def)             Requested size: 551.05739pt x 424.5852pt.
+
+Overfull \hbox (9.00362pt too wide) in paragraph at lines 476--477
+ [][] 
+ []
+
+[4]
+
+LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
+ on input line 496.
+
+<RelativeError2.png, id=45, 586.8324pt x 442.2924pt>
+File: RelativeError2.png Graphic file (type png)
+ <use RelativeError2.png>
+Package pdftex.def Info: RelativeError2.png used on input line 513.
+(pdftex.def)             Requested size: 586.83096pt x 442.29132pt.
+
+Overfull \hbox (8.99245pt too wide) in paragraph at lines 513--514
+ [][] 
+ []
+
+
+Overfull \hbox (7.30591pt too wide) detected at line 557
+\OML/cmm/m/it/10 ^^T[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 q\OT1/cmr/m/n/10 ) = \O
+ML/cmm/m/it/10 ^^T[] [][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 qd=\OT1/cmr/m/n/10 2
+)[] [] [][] [][] \OML/cmm/m/it/10 F\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 q; \OT1/cm
+r/m/n/10 ^^C[])\OML/cmm/m/it/10 ;[]
+ []
+
+[5 <./amplitude6.pdf> <./RelativeError2.png>]
+<Cross14.pdf, id=61, 815.045pt x 614.295pt>
+File: Cross14.pdf Graphic file (type pdf)
+ <use Cross14.pdf>
+Package pdftex.def Info: Cross14.pdf used on input line 605.
+(pdftex.def)             Requested size: 815.043pt x 614.29349pt.
+
+Overfull \hbox (8.9994pt too wide) in paragraph at lines 605--606
+ [][] 
+ []
+
+<extrapolation15.pdf, id=62, 839.135pt x 690.58pt>
+File: extrapolation15.pdf Graphic file (type pdf)
+ <use extrapolation15.pdf>
+Package pdftex.def Info: extrapolation15.pdf used on input line 622.
+(pdftex.def)             Requested size: 839.13293pt x 690.57831pt.
+
+Overfull \hbox (8.99469pt too wide) in paragraph at lines 622--623
+ [][] 
+ []
+
+
+LaTeX Warning: Command \r invalid in math mode on input line 640.
+
+<test11.pdf, id=63, 953.5625pt x 688.5725pt>
+File: test11.pdf Graphic file (type pdf)
+ <use test11.pdf>
+Package pdftex.def Info: test11.pdf used on input line 652.
+(pdftex.def)             Requested size: 953.56018pt x 688.5708pt.
+
+Overfull \hbox (8.99179pt too wide) in paragraph at lines 652--653
+ [][] 
+ []
+
+[6 <./Cross14.pdf> <./extrapolation15.pdf>]
+
+LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
+ on input line 680.
+
+[7 <./test11.pdf>]
+Overfull \hbox (14.30048pt too wide) detected at line 827
+[] \OT1/cmr/m/n/10 = [] [] [] [][] \OML/cmm/m/it/10 dQ[][]
+ []
+
+
+Underfull \hbox (badness 1681) in paragraph at lines 830--835
+[]\OT1/cmr/m/n/10 The num-ber of terms in the $\OML/cmm/m/it/10 Q[]; Q[]$ \OT1/
+cmr/m/n/10 sum is $\OMS/cmsy/m/n/10 ^^Y
+ []
+
+
+Overfull \hbox (14.6159pt too wide) detected at line 850
+[] \OT1/cmr/m/n/10 = [] [][]
+ []
+
+[8]
+No file algorithm3.bbl.
+[9] (./algorithm3.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ )
+(\end occurred inside a group at level 1)
+
+### simple group (level 1) entered at line 588 ({)
+### bottom level 
+Here is how much of TeX's memory you used:
+ 3782 strings out of 494672
+ 51070 string characters out of 3170553
+ 148777 words of memory out of 3000000
+ 6976 multiletter control sequences out of 15000+200000
+ 10353 words of font info for 40 fonts, out of 3000000 for 9000
+ 179 hyphenation exceptions out of 8191
+ 38i,9n,24p,1096b,308s stack positions out of 5000i,500n,10000p,200000b,50000s
+<c:/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx
+10.pfb><c:/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c
+:/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb><c:/texlive/
+2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2012/texm
+f-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb><c:/texlive/2012/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2012/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2012/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmmi6.pfb><c:/texlive/2012/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmmi7.pfb><c:/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.
+pfb><c:/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/te
+xlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2012/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2012/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/texlive/2012/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2012/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmsy5.pfb><c:/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmsy6.pfb><c:/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb
+><c:/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><c:/texli
+ve/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2012/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb><c:/texlive/2012/texmf-dist/
+fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on algorithm3.pdf (9 pages, 522102 bytes).
+PDF statistics:
+ 173 PDF objects out of 1000 (max. 8388607)
+ 118 compressed objects within 2 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+
