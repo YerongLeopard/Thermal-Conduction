@@ -5,8 +5,8 @@ module Particles
 !
 !  Contains all the data structures containing informations about atom postion,velocity and accelertion
 !
-   integer, parameter :: DIM=3     !the dimension of thw system
-   logical :: VelAcc = .FALSE.     ! velocities and accelerations in file or not
+   integer, parameter :: DIM = 3     !the dimension of thw system
+   logical :: VelAcc = .FALSE.       ! velocities and accelerations in file or not
    integer :: N=0!the number of atoms 
    double precision, dimension(DIM) :: BoxSize! real size of the system
 !     the following arrays are allocated at run time when the number of atoms N is known.
@@ -97,9 +97,9 @@ use Statistics
 use Particles
 use Simulation_Control
 implicit none
-double precision, dimension(DIM):: PosAtomReal,VelAtomReal,AccAtomReal!temporary variables
-double precision, dimension(DIM):: Mass_center=0.d0, displacement=0.d0
-double precision,dimension(DIM,4):: class=0.0d0 
+double precision, dimension(DIM) :: PosAtomReal,VelAtomReal,AccAtomReal!temporary variables
+double precision, dimension(DIM) :: Mass_center=0.d0, displacement=0.d0
+double precision,dimension(DIM,4) :: class=0.0d0 
 integer :: i,j,k,l,lisin
 logical :: setpos=.FALSE.
 lisin=len_trim(SampIn)
@@ -213,15 +213,16 @@ implicit none
 !  Read the input parameters controlling the simulation from the standard
 !  input.
 !
-title='First Program'!name of the program
-SampIn='input.dat'
-Nsteps=2000*10
-deltat=6.965d-3
-TRequested=-1.0d0!if TRequested<0. then at constant Energy 
-!TRequested=6.6d-1
-ConstantT = ( TRequested >= 0 )
-e=5.866!the amplitude of the flux
-return   !  successful exit
+title='First Program' !name of the program
+SampIn='input.dat'    ! input file
+! Nsteps=2000*10      ! This is the number of step in this run
+Nsteps = 100 ! DEBUG
+deltat=6.965d-3       ! the time step
+TRequested= -1.0d0    ! if TRequested<0. then at constant Energy 
+! TRequested=6.6d-1 ! DEBUG
+ConstantT = ( TRequested >= 0 ) ! if ConstantT = True if constant T
+e = 5.866 ! the amplitude of the flux : unit
+return   ! successful exit
 200 continue
    print*,'Read_Input: FATAL: premature end-of-file in standard input'
    stop
@@ -235,10 +236,10 @@ subroutine Print_Parameters
   use Particles
   use Statistics
   open(unit=2,file='parameters.dat',status='unknown',action='write')
-! e=1.659
-!LENX=9.356
-!LENZ=62.379
-!SLAB=40
+  !e=1.659
+  !LENX=9.356
+  !LENZ=62.379
+  !SLAB=40
   write(2,*) e
   write(2,*) BoxSize(1)
   write(2,*) BoxSize(DIM)
@@ -256,8 +257,8 @@ use Particles
 use Simulation_Control
 use Statistics
 implicit none
-integer ::step,first,last
- double precision::chi=0.d0
+integer :: step, first, last
+double precision::chi = 0.d0
 !
 !  We need to have the initial temperature ready in case we are going
 !  at constant T:
@@ -269,8 +270,8 @@ call Compute_Temperature
 !  applied when ConstantT is enabled.
 !
 call refold_positions
-first=init+1
-last=init+Nsteps
+first = init + 1 ! This record the iteration step that has finished
+last = init + Nsteps
 time: do step=first,last
 
    pos = pos + deltat*vel + 0.5d0*(deltat**2)*acc      ! r(t+dt)
