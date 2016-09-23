@@ -24,7 +24,7 @@ module Simulation_Control
 !
    character*80:: title         !  title of this program
    character*80:: SampIn        !  name of file containing input sample
-   integer:: Nsteps=0,init=0        !  number of time steps to do
+   integer:: Nsteps=0, init=0        !  number of time steps to do
    double precision:: deltat         !  time steps (redueced units)
    double precision:: TRequested    !  desired temperature, or <0.d0 if constant E
    logical :: ConstantT     !  made .TRUE. when (TRequested >= 0)
@@ -104,7 +104,12 @@ integer :: i,j,k,l,lisin
 logical :: setpos=.FALSE.
 lisin=len_trim(SampIn)
 open(unit=1,file=SampIn(1:lisin),status='old',action='read')!!open the file here read the input
-read(1,'(1X,L2,I7,3E23.15,2I7)') VelAcc,N,BoxSize,init,Tsteps!VelAcc judges whether there are velocities and accelerations in file
+
+!!! VelAcc judges whether there are velocities and accelerations in file : VelAcc = T means there is Velocity and Acceleration in input.dat
+!!! N contains number of atoms
+!!! Boxsize contatins height, width and depth of simulation supercell
+!!! init contains the number of steps up till now
+read(1,'(1X,L2,I7,3E23.15,2I7)') VelAcc,N,BoxSize,init,Tsteps
 read(1,'(24E23.15)')slab_temperature_sum,slab_temperature_SQsum
 if ( N <= 0 ) then
    print*,'Read_Sample: FATAL: N is',N
@@ -113,8 +118,10 @@ endif
 !
 !  compute volume and density once for all (they do not change in the run)
 !
-volume  =product(BoxSize)
+volume  = product(BoxSize)
 density = real(N) / volume
+! DEBUG
+write(*,*) 'density', density
 !
 ! allocate space here
 !
@@ -139,10 +146,7 @@ do i=1,N
 enddo
   vel_sq = 0.d0
 
-
-
 !setpos=.TRUE.
-
 
 if (setpos) then
         class(1,1)=0.0d0
@@ -270,30 +274,28 @@ call Compute_Temperature
 !  applied when ConstantT is enabled.
 !
 call refold_positions
-first = init + 1 ! This record the iteration step that has finished
-last = init + Nsteps
-time: do step=first,last
+first=init + 1 ! This record the iteration step that has finished
+last=init + Nsteps
+time: do step=first, last
 
-   pos = pos + deltat*vel + 0.5d0*(deltat**2)*acc      ! r(t+dt)
+   pos=pos+deltat*vel+0.5d0*(deltat**2)*acc      ! r(t+dt)
    call Compute_Temperature ! T(t)
-   if (ConstantT .and. (temperature > 0) ) then	  !  veloc rescale for const T
-      chi = sqrt( Trequested / temperature )
-      vel = chi*vel + 0.5d0*deltat*acc                 ! v(t+dt/2)
+   if (ConstantT .and. (temperature>0) ) then	  !  veloc rescale for const T
+      chi=sqrt( Trequested / temperature )
+      vel=chi*vel+0.5d0*deltat*acc                 ! v(t+dt/2)
    else                          !  regular constant E dynamics
-      vel = vel + 0.5d0*deltat*acc                     ! v(t+dt/2)
+      vel=vel+0.5d0*deltat*acc                     ! v(t+dt/2)
    endif
    call Refold_Positions
    call Compute_Forces                                 ! a(t+dt)
-   vel = vel + 0.5d0*deltat*acc                        ! v(t+dt)
+   vel=vel+0.5d0*deltat*acc                        ! v(t+dt)
 !   call Grouping
-
 !   pos = pos + deltat*vel + 0.5d0*(deltat**2)*acc      ! r(t+dt)
 !   call Refold_Positions
 !   vel = vel + 0.5d0*deltat*acc                     ! v(t+dt/2)
 !   call Compute_Forces                                 ! a(t+dt)
 !   vel = vel + 0.5d0*deltat*acc                        ! v(t+dt)
-  
-!!!!Every W steps,we do the impose! 
+!!!! Every W steps,we do the impose! 
    if(1==mod(step,W)) then
      call Do_The_Impose 
    endif
@@ -301,9 +303,9 @@ time: do step=first,last
    if (1==mod(step,Mtime))then
      call Compute_Temperature  ! temperature at t+dt, also ene_kin
      write(*,700)step,'/',last
-!!!!accumulate statistics:
-     slab_temperature_sum  = slab_temperature_sum  + slab_temperature
-     slab_temperature_SQsum= slab_temperature_SQsum+ slab_temperature**2! used to calculate the deviation
+!!!! accumulate statistics:
+     slab_temperature_sum  =slab_temperature_sum  + slab_temperature
+     slab_temperature_SQsum=slab_temperature_SQsum+ slab_temperature**2! used to calculate the deviation
      Tsteps=Tsteps+1!count repeated times of measuring temperature
      700 format (1x,i9,a1,i9)
      call Print_Statistics
@@ -363,7 +365,7 @@ integer,parameter ::cut=288*2
 !
 !  Reset to zero potential energies, forces, virial term
 !
-acc = 0.d0! Reset to zero
+acc = 0.d0 ! Reset to zero
 
 !
 !  Loop over all pairs of particles
@@ -376,17 +378,17 @@ do i = 1,N-1                                     ! looping an all pairs
          Sij = Sij - sign(1.d0,Sij)               ! periodic boundary conditions -0.5->0.5     
       end where                                   ! applied where needed.
       do k=1,DIM 
-       Rij(k)= BoxSize(k)*Sij(k)                         ! go to real space units
+       Rij(k)= BoxSize(k)*Sij(k)                  ! go to real space units
       end do
-       Rsqij = dot_product(Rij,Rij)                ! compute square distance
-      if ( Rsqij <(Rcutoff**2) ) then              ! particles are interacting?
+       Rsqij = dot_product(Rij,Rij)               ! compute square distance
+      if ( Rsqij <(Rcutoff**2) ) then             ! particles are interacting?
          !  compute Lennard-Jones potenntial
          rm2 = 1.d0/Rsqij                         !  1/r^2
          rm6 = rm2**3                             !  1/r^6
          rm12 = rm6**2                            !  1/r^12
-         dphi = 24.d0*rm2*( 2.d0*rm12 - rm6 )     !  24[2/r^14 - 1/r^8]
-         acc(:,i) = acc(:,i) + dphi*Sij           ! accumulate forces
-         acc(:,j) = acc(:,j) - dphi*Sij           !    (Fji = -Fij) these forces here are in scaled space
+         dphi = 24.d0*rm2*(2.d0*rm12-rm6 )        !  24[2/r^14 - 1/r^8]
+         acc(:,i)=acc(:,i)+dphi*Sij               ! accumulate forces
+         acc(:,j)=acc(:,j)-dphi*Sij               ! (Fji = -Fij) these forces here are in scaled space
       endif
    enddo
 enddo
