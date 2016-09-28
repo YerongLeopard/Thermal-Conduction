@@ -127,11 +127,7 @@ def discrete_func1(q,kappa,MinPath):
                #print '$v/k$==',v/k,sum
     result=result/(N3*N1*N2*4)*(3-p)*((np.cos(q0/2))**2)
     ans.append(result*kappa)
-#  ax.set_xlabel('X')
-#  ax.set_ylabel('Y')
-#  ax.set_zlabel('Z')
-#  fig.add_axes(ax)
-    print i,'==',N1*N2*4*N3,'(N=',N3,')'
+    print (i,'==',N1*N2*4*N3,'(N=',N3,')')
   return ans
 
 pl.rc('axes', linewidth=1.2)

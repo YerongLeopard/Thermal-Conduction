@@ -130,7 +130,7 @@ def discrete_func1(q,kappa,MinPath):
 #  ax.set_ylabel('Y')
 #  ax.set_zlabel('Z')
 #  fig.add_axes(ax)
-    print i,'==',N1*N2*4*N3,'(N=',N3,')'
+    print(i,'==',N1*N2*4*N3,'(N=',N3,')')
   return ans
 
 pl.rc('axes', linewidth=1.2)
@@ -204,4 +204,5 @@ pl.ylabel('$\kappa(q)/\kappa(0)$',fontsize=30)
 #pl.ylabel('$\kappa(q)$',fontsize=30)
 pl.xticks(fontsize=14)
 pl.yticks(fontsize=14)
+print('finished \n')
 plt.show()
