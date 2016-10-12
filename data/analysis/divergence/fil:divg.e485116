@@ -1,0 +1,9 @@
+stty: standard input: Invalid argument
+tset: standard error: Inappropriate ioctl for device
+
+TERM: Undefined variable.
+stty: standard input: Invalid argument
+Traceback (most recent call last):
+  File "calculate-divergence.py", line 56, in <module>
+    
+IOError: [Errno 116] Stale NFS file handle

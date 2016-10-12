@@ -1,9 +1,10 @@
-import scipy as sp
-import numpy as np
-import pylab as pl
-import matplotlib.pyplot as plt
-import scipy.optimize as optimization
-import mpl_toolkits.mplot3d.axes3d as p3
+import sys;
+import scipy as sp;
+import numpy as np;
+import pylab as pl;
+import matplotlib.pyplot as plt;
+import scipy.optimize as optimization;
+import mpl_toolkits.mplot3d.axes3d as p3;
 p=2
 Debyek=0.985
 def discrete_func1(q,kappa,MinPath):     # discrete_func1 takes wavevctor q as the major input
@@ -42,13 +43,15 @@ def discrete_func1(q,kappa,MinPath):     # discrete_func1 takes wavevctor q as t
                result=result+((v**2)/sq)*((Debyek/k)**p)/(1+4*((np.sin(q0/2))**2)*(MinPath*(v/k)*((Debyek/k)**p)+(MinPath*(v/k)*((Debyek/k)**p))**2))
     result=result/(N3*N1*N2*4)*(3-p)*((np.cos(q0/2))**2)
     ans.append(result*kappa)
-    print i,'==',N1*N2*4*N3,'(N=',N3,')'
+    # print i,'==',N1*N2*4*N3,'(N=',N3,')' # DEBUG
   return ans
 
-File = open('6by.dat', 'w')
-q=list(np.arange(160,160+10,10))
-for q0 in q:
-  y=discrete_func1([2*sp.pi/q0],1,0.615140781881)
-  print >>File,q0,y[0]
-File.close()
-print 'finished.\n'
+
+L=list(np.arange(2000,20000, 1));
+for l0 in L:
+  File = open('6by.dat', 'a');
+  y=discrete_func1([2*sp.pi/l0],1,0.615140781881) # ratio
+  print >> File,l0,y[0]
+  # sys.stdout.write(str(l0)+' ');
+  File.close()
+print '\nfinished.\n'
