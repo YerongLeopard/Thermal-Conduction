@@ -47,7 +47,7 @@ def discrete_func1(q,kappa,MinPath):     # discrete_func1 takes wavevctor q as t
   return ans
 
 
-L=list(np.arange(2000,20000, 1));
+L=list(np.arange(7164,20000, 1));
 for l0 in L:
   File = open('6by.dat', 'a');
   y=discrete_func1([2*sp.pi/l0],1,0.615140781881) # ratio
