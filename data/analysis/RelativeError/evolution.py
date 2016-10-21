@@ -1,7 +1,11 @@
 import numpy as np
-import matplotlib;matplotlib.use("TkAgg");
+import matplotlib;
+try:
+   import pylab as pl   #import pylab test   
+except (ImportError, AssertionError):
+   matplotlib.use("TkAgg")
+   import pylab as pl
 import matplotlib.pyplot as plt
-import pylab as pl
 import scipy.optimize as optimization
 def func(x,a,b): 
   return (a*np.exp(x*b))
