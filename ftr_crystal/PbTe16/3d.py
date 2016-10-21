@@ -1,3 +1,4 @@
+import matplotlib; matplotlib.use("TkAgg");
 import pylab as pl
 import mpl_toolkits.mplot3d.axes3d as p3
 
@@ -16,7 +17,7 @@ for pos in data[:]:
     z=z+[pos[2]]
   i=i+1
 
-
+print('DEBUG');
 fig=pl.figure()
 ax = p3.Axes3D(fig)
 ax.scatter(x, y,z,s=10)

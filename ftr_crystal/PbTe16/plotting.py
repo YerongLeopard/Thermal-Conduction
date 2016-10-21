@@ -1,7 +1,7 @@
 import numpy as np
 import scipy.optimize as optimization
+import matplotlib; matplotlib.use("TkAgg");
 import matplotlib.pyplot as plt
-import matplotlib
 import pylab as pl
 import scipy.optimize as optimization
 import math as m
