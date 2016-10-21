@@ -1,10 +1,10 @@
 import numpy as np
 import matplotlib;
 try:
-   import pylab as pl   #import pylab test   
-except (ImportError, AssertionError):
+   from PyQt4 import QtCore, QtGui
+except:
    matplotlib.use("TkAgg")
-   import pylab as pl
+import pylab as pl
 import matplotlib.pyplot as plt
 import scipy.optimize as optimization
 def func(x,a,b): 
