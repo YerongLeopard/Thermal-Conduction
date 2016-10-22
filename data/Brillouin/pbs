@@ -1,0 +1,6 @@
+#!/bin/csh
+#PBS -l walltime=48:00:00
+#PBS -l nodes=2:ppn=5
+#PBS -N fil:divg
+cd "$PBS_O_WORKDIR"
+python calculate-divergence.py 
