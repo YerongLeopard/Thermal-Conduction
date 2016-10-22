@@ -1,10 +1,14 @@
-import sys;
-import scipy as sp;
-import numpy as np;
-import pylab as pl;
-import matplotlib.pyplot as plt;
-import scipy.optimize as optimization;
-import mpl_toolkits.mplot3d.axes3d as p3;
+import scipy as sp
+import numpy as np
+import matplotlib
+try:
+   from PyQt4 import QtCore, QtGui
+except:
+   matplotlib.use("TkAgg")
+import pylab as pl
+import matplotlib.pyplot as plt
+import scipy.optimize as optimization
+import mpl_toolkits.mplot3d.axes3d as p3
 p=2
 Debyek=0.985
 def discrete_func1(q,kappa,MinPath):     # discrete_func1 takes wavevctor q as the major input
@@ -29,7 +33,6 @@ def discrete_func1(q,kappa,MinPath):     # discrete_func1 takes wavevctor q as t
       for n2 in range(first2,last2):
         for n3 in range(first3,last3):
           if ((-2*N2*N3*n1+2*N1*N3*n2+2*N1*N2*n3>-3*N1*N2*N3)and(-2*N2*N3*n1+2*N1*N3*n2+2*N1*N2*n3<3*N1*N2*N3+1)and(+2*N2*N3*n1-2*N1*N3*n2+2*N1*N2*n3>-3*N1*N2*N3)and(+2*N2*N3*n1-2*N1*N3*n2+2*N1*N2*n3<3*N1*N2*N3+1)and(+2*N2*N3*n1+2*N1*N3*n2-2*N1*N2*n3>-3*N1*N2*N3)and(+2*N2*N3*n1+2*N1*N3*n2-2*N1*N2*n3<3*N1*N2*N3+1)and(+2*N2*N3*n1+2*N1*N3*n2+2*N1*N2*n3>-3*N1*N2*N3)and(+2*N2*N3*n1+2*N1*N3*n2+2*N1*N2*n3<3*N1*N2*N3+1)):
-
              x1=n1/float(N1)
              x2=n2/float(N2)
              x3=n3/float(N3)             
@@ -43,15 +46,16 @@ def discrete_func1(q,kappa,MinPath):     # discrete_func1 takes wavevctor q as t
                result=result+((v**2)/sq)*((Debyek/k)**p)/(1+4*((np.sin(q0/2))**2)*(MinPath*(v/k)*((Debyek/k)**p)+(MinPath*(v/k)*((Debyek/k)**p))**2))
     result=result/(N3*N1*N2*4)*(3-p)*((np.cos(q0/2))**2)
     ans.append(result*kappa)
-     print i,'==',N1*N2*4*N3,'(N=',N3,')' # DEBUG
+    if (i!=N1*N2*N3*4-1):   # DEBUG 
+      print('i',i,'==',N1*N2*4*N3-1,'(N=',N3,')') # DEBUG
   return ans
 
 
-L=list(np.arange(1,20, 1));
+L=list(np.arange(50,300, 1));
 for l0 in L:
   File = open('6by.dat', 'a');
   y=discrete_func1([2*sp.pi/l0],1,0.615140781881) # ratio
   print >> File,l0,y[0]
-  print l0,' ', y[0]
+  # print l0,' ', y[0]
   File.close()
 print '\nfinished.\n'
