@@ -6,19 +6,16 @@ try:
 except:
    matplotlib.use("TkAgg")
 import pylab as pl;
-def discrete_func(q,kappa,MinPath,divider=1):     # discrete_func1 takes wavevctor q as the major input
+def discrete_func(List,kappa,MinPath,divider=1):     # discrete_func1 takes wavevctor q as the major input
   Debyek=0.985 # Debye cut-off wavelength depend merely on the density
   p=2; # p=2 has the real physics 
   N1=6
   N2=6
   ans=[]
-  for q0 in q: 
+  for N3 in List: 
     sum=0.0  
     i=0
-    N3=6
-    if (abs(q0)>10e-10):
-      N3=round(2*sp.pi/q0,0)
-      N3=int(N3)
+    q1=2*sp.pi/N3  # minimum wavelength in this stucture 
     first1=-N1+1
     last1=N1+1
     first2=-N2+1
@@ -29,8 +26,11 @@ def discrete_func(q,kappa,MinPath,divider=1):     # discrete_func1 takes wavevct
     for n1 in range(first1,last1):
       for n2 in range(first2,last2):
         for n3 in range(first3,last3):
-          if ((-2*N2*N3*n1+2*N1*N3*n2+2*N1*N2*n3>-3*N1*N2*N3)and(-2*N2*N3*n1+2*N1*N3*n2+2*N1*N2*n3<3*N1*N2*N3+1)and(+2*N2*N3*n1-2*N1*N3*n2+2*N1*N2*n3>-3*N1*N2*N3)and(+2*N2*N3*n1-2*N1*N3*n2+2*N1*N2*n3<3*N1*N2*N3+1)and(+2*N2*N3*n1+2*N1*N3*n2-2*N1*N2*n3>-3*N1*N2*N3)and(+2*N2*N3*n1+2*N1*N3*n2-2*N1*N2*n3<3*N1*N2*N3+1)and(+2*N2*N3*n1+2*N1*N3*n2+2*N1*N2*n3>-3*N1*N2*N3)and(+2*N2*N3*n1+2*N1*N3*n2+2*N1*N2*n3<3*N1*N2*N3+1)):
-             qc = q0/divider;  # calculating \kappa(qc=q0/4)
+          if ((-2*N2*N3*n1+2*N1*N3*n2+2*N1*N2*n3>-3*N1*N2*N3)and(-2*N2*N3*n1+2*N1*N3*n2+2*N1*N2*n3<3*N1*N2*N3+1)\
+           and(+2*N2*N3*n1-2*N1*N3*n2+2*N1*N2*n3>-3*N1*N2*N3)and(+2*N2*N3*n1-2*N1*N3*n2+2*N1*N2*n3<3*N1*N2*N3+1)\
+           and(+2*N2*N3*n1+2*N1*N3*n2-2*N1*N2*n3>-3*N1*N2*N3)and(+2*N2*N3*n1+2*N1*N3*n2-2*N1*N2*n3<3*N1*N2*N3+1)\
+           and(+2*N2*N3*n1+2*N1*N3*n2+2*N1*N2*n3>-3*N1*N2*N3)and(+2*N2*N3*n1+2*N1*N3*n2+2*N1*N2*n3<3*N1*N2*N3+1)):
+             qc = q1/divider;  # calculating \kappa(qc=q1/4)
              x1=n1/float(N1)
              x2=n2/float(N2)
              x3=n3/float(N3)             
