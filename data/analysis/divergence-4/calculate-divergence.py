@@ -1,4 +1,6 @@
 import sys;
+sys.path.append("../include/")
+from analysis import *
 import scipy as sp;
 import numpy as np;
 import matplotlib;
@@ -8,8 +10,6 @@ except:
    matplotlib.use("TkAgg")
 import pylab as pl;
 import matplotlib.pyplot as plt;
-import scipy.optimize as optimization;
-import mpl_toolkits.mplot3d.axes3d as p3;
 p=2
 Debyek=0.985
 def discrete_func1(q,kappa,MinPath):     # discrete_func1 takes wavevctor q as the major input
@@ -51,10 +51,10 @@ def discrete_func1(q,kappa,MinPath):     # discrete_func1 takes wavevctor q as t
     # print i,'==',92*N2*4*N3,'(N=',N3,')' # DEBUG
   return ans
 
-L=list(np.arange(2609,3500, 1));
+L=list(np.arange(200,202, 1));
 for l0 in L:
   File = open('6by.dat', 'a');
-  y=discrete_func1([2*sp.pi/l0],1,0.615140781881) # ratio
+  y=discrete_func([2*sp.pi/l0],1,0.615140781881,4) # ratio
   print >> File,l0,y[0]
   print l0,' ', y[0]
   File.close()
