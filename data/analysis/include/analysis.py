@@ -6,7 +6,7 @@ try:
 except:
    matplotlib.use("TkAgg")
 import pylab as pl;
-def discrete_func(List,kappa,MinPath,divider=1):     # discrete_func1 takes wavevctor q as the major input
+def discrete_func(List, kappa, MinPath, scale = 1):     # discrete_func1 takes wavevctor q as the major input
   Debyek=0.985 # Debye cut-off wavelength depend merely on the density
   p=2; # p=2 has the real physics 
   N1=6
@@ -30,7 +30,7 @@ def discrete_func(List,kappa,MinPath,divider=1):     # discrete_func1 takes wave
            and(+2*N2*N3*n1-2*N1*N3*n2+2*N1*N2*n3>-3*N1*N2*N3)and(+2*N2*N3*n1-2*N1*N3*n2+2*N1*N2*n3<3*N1*N2*N3+1)\
            and(+2*N2*N3*n1+2*N1*N3*n2-2*N1*N2*n3>-3*N1*N2*N3)and(+2*N2*N3*n1+2*N1*N3*n2-2*N1*N2*n3<3*N1*N2*N3+1)\
            and(+2*N2*N3*n1+2*N1*N3*n2+2*N1*N2*n3>-3*N1*N2*N3)and(+2*N2*N3*n1+2*N1*N3*n2+2*N1*N2*n3<3*N1*N2*N3+1)):
-             qc = q1/divider;  # calculating \kappa(qc=q1/4)
+             qc =q1*scale;  # calculating \kappa(qc=q1/4)
              x1=n1/float(N1)
              x2=n2/float(N2)
              x3=n3/float(N3)             
