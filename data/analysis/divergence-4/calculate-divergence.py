@@ -10,7 +10,7 @@ except:
    matplotlib.use("TkAgg")
 import pylab as pl;
 import matplotlib.pyplot as plt;
-L=list(np.arange(432,12000*4, 4));
+L=list(np.arange(9500,12000*4, 4));
 for l0 in L:
   File = open('6by.dat', 'a');
   y=discrete_func([l0],1,0.615140781881,[4])[0] # ratio
