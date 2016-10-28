@@ -30,10 +30,10 @@ resSet1 = [1/element for element in kappaSet1]
 resSet2 = [1/element for element in kappaSet2]
 plt.plot(xx1,resSet1, '-b', label="$\kappa_0/\kappa(\\frac{2\pi}{L})$")
 plt.plot(xx2,resSet2, '-r', label="$\kappa_0/\kappa_\\mathrm{eff}$")
-plt.savefig("resistance.png")
 plt.legend(loc='best', fontsize=20)
 pl.xlabel('$qa = 2\pi/L$', fontsize=20)
 pl.ylabel('Resistance $\kappa_0/\kappa$', fontsize=20)
+plt.savefig("resistance.png")
 plt.show()
 # print pointSet1 # DEBUG
 # print data1[0,0]# DEBUG
