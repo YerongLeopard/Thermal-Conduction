@@ -43,7 +43,7 @@ def K_eff(length):
    keff = 1/rev_keff
    return keff
 def main():
-  L=list(np.arange(400, 2000 +1, 100));  # length has to be an even number 
+  L=list(np.arange(2200, 3000 +1, 200));  # length has to be an even number 
   for l0 in L:
       File = open('k_eff_tmp.dat', 'a');
       keff=K_eff(l0)
