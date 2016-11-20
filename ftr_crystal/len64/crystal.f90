@@ -102,6 +102,7 @@ double precision, dimension(DIM):: Mass_center=0.d0, displacement=0.d0
 double precision,dimension(DIM,8):: class=0.0d0 
 integer :: i,j,k,l,lisin
 logical :: setpos=.FALSE.
+character(50) :: formatstr
 lisin=len_trim(SampIn)
 open(unit=1,file=SampIn(1:lisin),status='old',action='read')!!open the file here read the input
 !
@@ -122,7 +123,9 @@ open(unit=1,file=SampIn(1:lisin),status='old',action='read')!!open the file here
 ! giving position, velocity and acceleration of each atom in subsequent lines
 !
 read(1,'(1X,L2,I7,3E23.15,2I7)') VelAcc,N,BoxSize,init,Tsteps!VelAcc judges whether there are velocities and accelerations in file
-read(1,'(256E23.15)')slab_temperature_sum,slab_temperature_SQsum
+write(formatstr,*) SLAB*2
+formatstr='('//trim(adjustl(formatstr))//'E23.15)'
+read(1,formatstr)slab_temperature_sum,slab_temperature_SQsum
 if ( N <= 0 ) then
    print*,'Read_Sample: FATAL: N is',N
    stop
@@ -433,29 +436,6 @@ do i = 1,N-1                                     ! looping an all pairs
   high=min(i+cut,N) 
   do j = i+1,high
     !! Setting Parameters
-    !!      | A (eV)    |Rho (A) |C(eV A6)| Range (A)
-    !!Pb–Pb | 84203.2   | 0.0754 | 61.01  | 16.0
-    !!Pb–Te | 92131.5   | 0.2552 | 585.70 | 16.0
-    !!Te–Te | 1773611.7 | 0.2565 | 0.61   | 16.0
-    if (atom_type(i) .AND. atom_type(j)) then
-      qq=0.666*0.666
-      A=84203.2
-      Rho=0.0754
-      C=61.01
-    endif
-    if (atom_type(i) .AND. (.NOT.atom_type(j))) then
-      qq=-0.666*0.666
-      A=92131.5
-      Rho=0.2552
-      C=585.70
-    endif
-    if ((.NOT.atom_type(i)) .AND. (.NOT.atom_type(j))) then
-      qq=0.666*0.666
-      A=1663611.7
-      Rho=0.2565
-      C=0.61
-    endif
-    !! Setting Parameters
       Sij = pos(:,i) - pos(:,j)                   ! distance vector between i j
       where ( abs(Sij) > 0.5d0 )                  ! (in box scaled units)
          Sij = Sij - sign(1.d0,Sij)               ! periodic boundary conditions -0.5->0.5     
@@ -478,29 +458,6 @@ enddo
 
 do i = 1,cut                                     ! looping an all pairs
   do j = N-cut+i,N
-    !! Setting Parameters
-    !!      | A (eV)    |Rho (A) |C(eV A6)| Range (A)
-    !!Pb–Pb | 84203.2   | 0.0754 | 61.01  | 16.0
-    !!Pb–Te | 92131.5   | 0.2552 | 585.70 | 16.0
-    !!Te–Te | 1773611.7 | 0.2565 | 0.61   | 16.0
-    if (atom_type(i) .AND. atom_type(j)) then
-      qq=0.666*0.666
-      A=84203.2
-      Rho=0.0754
-      C=61.01
-    endif
-    if (atom_type(i) .AND. (.NOT.atom_type(j))) then
-      qq=-0.666*0.666
-      A=92131.5
-      Rho=0.2552
-      C=585.70
-    endif
-    if ((.NOT.atom_type(i)) .AND. (.NOT.atom_type(j))) then
-      qq=0.666*0.666
-      A=1663611.7
-      Rho=0.2565
-      C=0.61
-    endif
     !! Setting Parameters: There are totally three types of interaction
       Sij = pos(:,i) - pos(:,j)                   ! distance vector between i j
       where ( abs(Sij) > 0.5d0 )                  ! (in box scaled units)
