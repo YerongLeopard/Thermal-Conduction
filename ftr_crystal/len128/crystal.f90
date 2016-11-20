@@ -686,12 +686,14 @@ subroutine Print_Statistics
 use Simulation_Control
 use Statistics
 implicit none
+character(50):: formatstr
 open(unit=4,file='slab.dat',status='unknown',action='write',position='append')
 open(unit=7,file='error.dat',status='unknown',action='write',position='append')
-write (4,141) slab_temperature_sum(0:SLAB-1)/Tsteps
-write (7,141) sqrt(slab_temperature_SQsum(0:SLAB-1)/real(Tsteps-1)/real(Tsteps) &
+write(formatstr, *)SLAB
+formatstr='('//trim(adjustl(formatstr))//'f10.6)'
+write (4,formatstr) slab_temperature_sum(0:SLAB-1)/Tsteps
+write (7,formatstr) sqrt(slab_temperature_SQsum(0:SLAB-1)/real(Tsteps-1)/real(Tsteps) &
               -(slab_temperature_sum(0:SLAB-1)**2)/(real(Tsteps)*real(Tsteps)*real(Tsteps-1)))
-141 format(128f10.6)
 close(unit=4)
 close(unit=7)
 end subroutine Print_Statistics
