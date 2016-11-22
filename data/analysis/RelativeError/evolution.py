@@ -7,6 +7,8 @@ except:
 import pylab as pl
 import matplotlib.pyplot as plt
 import scipy.optimize as optimization
+# Customize frame
+pl.rc('axes', linewidth=2)
 data1= pl.loadtxt('KappaFile.dat')
 error1=pl.loadtxt('ErrorFile.dat')
 data2= pl.loadtxt('New.dat')
@@ -17,8 +19,8 @@ ratio=[]
 x=np.arange(27428-1200) # Original 
 # x = np.arange(1000) # DEBUG
 x=(x+1200)
-x_position = [50000, 100000, 150000, 200000]
-x_label = [1,2,3,4]
+x_position = [25000, 50000, 75000, 100000, 125000, 150000, 175000, 200000]
+x_label = ['', '1','', '2', '', '3', '', '4']
 for i in x:
   rerror1=rerror1+[error1[i]/data1[i]]
   rerror2=rerror2+[error2[i]/data2[i]]
@@ -30,9 +32,19 @@ plt.plot(x*7,rerror1,'.r',markersize=5)
 plt.plot(x*7,rerror2,'.b',markersize=5)
 # plt.legend(loc='best') # No legend require
 
-# Customize tick marks
 ax = plt.gca()
-ax.tick_params(width=2, length=7)
+# Customize tick marks
+ax.tick_params(width=2, length=8) # setting linth and width of tick marks
+
+for tick in ax.xaxis.get_major_ticks():
+    tick.label1.set_fontsize(15)
+    tick.label1.set_fontweight('bold')
+for tick in ax.yaxis.get_major_ticks():
+    tick.label1.set_fontsize(15)
+    tick.label1.set_fontweight('bold')
+
+
+
 pl.xlim(0 , 200000)
 plt.xticks(x_position, x_label)
 pl.ylim(0.00 , 0.10)
