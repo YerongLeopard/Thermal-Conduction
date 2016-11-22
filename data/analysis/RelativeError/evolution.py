@@ -34,13 +34,17 @@ plt.plot(x*7,rerror2,'.b',markersize=5)
 
 ax = plt.gca()
 # Customize tick marks
+major_ticks = np.arange(0, 200001, 50000)
+minor_ticks = np.arange(0, 200001, 25000)
 ax.tick_params(width=2, length=8) # setting linth and width of tick marks
 
-for tick in ax.xaxis.get_major_ticks():
-    tick.label1.set_fontsize(15)
+# Customize tick labels
+for idx, tick in enumerate(ax.xaxis.get_major_ticks()):
+    tick.label1.set_fontsize(20)
     tick.label1.set_fontweight('bold')
+
 for tick in ax.yaxis.get_major_ticks():
-    tick.label1.set_fontsize(15)
+    tick.label1.set_fontsize(20)
     tick.label1.set_fontweight('bold')
 
 
