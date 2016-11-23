@@ -7,6 +7,8 @@ except:
 import pylab as pl
 import matplotlib.pyplot as plt
 import scipy.optimize as optimization
+from matplotlib.ticker import MultipleLocator, FormatStrFormatter, FixedLocator
+
 # Customize frame
 pl.rc('axes', linewidth=2)
 data1= pl.loadtxt('KappaFile.dat')
@@ -19,8 +21,8 @@ ratio=[]
 x=np.arange(27428-1200) # Original 
 # x = np.arange(1000) # DEBUG
 x=(x+1200)
-x_position = [25000, 50000, 75000, 100000, 125000, 150000, 175000, 200000]
-x_label = ['', '1','', '2', '', '3', '', '4']
+x_position = [50000, 100000, 150000, 200000]
+x_label = ['1', '2', '3', '4']
 for i in x:
   rerror1=rerror1+[error1[i]/data1[i]]
   rerror2=rerror2+[error2[i]/data2[i]]
@@ -34,9 +36,13 @@ plt.plot(x*7,rerror2,'.b',markersize=5)
 
 ax = plt.gca()
 # Customize tick marks
-major_ticks = np.arange(0, 200001, 50000)
-minor_ticks = np.arange(0, 200001, 25000)
-ax.tick_params(width=2, length=8) # setting linth and width of tick marks
+ax.tick_params(which='both',width=2) # setting length and width of tick marks
+majorLocator = MultipleLocator(50000)
+minorLocator = FixedLocator(np.arange(25000, 200000+1, 50000))
+ax.xaxis.set_major_locator(majorLocator)
+ax.tick_params(which='major', length=14)
+ax.xaxis.set_minor_locator(minorLocator)
+ax.tick_params(which='minor', length=8) 
 
 # Customize tick labels
 for idx, tick in enumerate(ax.xaxis.get_major_ticks()):
