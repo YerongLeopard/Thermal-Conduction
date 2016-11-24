@@ -43,7 +43,7 @@ def discrete_func(List, kappa, MinPath, scale = [1]):     # discrete_func1 takes
                  # print scl, "scl" # DEBUG
                  result[it] += ((z**2)/sq)*((Debyek/k)**p)/\
                            (1+4*((np.sin(qc/2))**2)*(MinPath*(z/k)*((Debyek/k)**p)+(MinPath*(z/k)*((Debyek/k)**p))**2))
-    result = [kappa * rst/(N3*N1*N2*4)*(3-p)*((np.cos(q1*scl/2))**2) for rst, scl in zip(result, scale)]
+    result = [3*kappa * rst/(N3*N1*N2*4)*((np.cos(q1*scl/2))**2) for rst, scl in zip(result, scale)]
     ans.append(result)
     # print i,'==',N1*N2*4*N3,'(N=',N3,')' # DEBUG
   return ans
