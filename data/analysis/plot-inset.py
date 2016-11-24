@@ -36,7 +36,7 @@ plt.xticks(fontsize = 18)
 plt.yticks(fontsize = 20)
 axes1.xaxis.set_tick_params(size=14,width=1.2)
 axes1.yaxis.set_tick_params(size=14,width=1.2)
-axes2 = fig.add_axes([0.35, 0.5, 0.4, 0.35],xticks=np.arange(0.0,0.15+0.05,0.05),xlim=[0.0,0.2],ylim=[0.0,0.6]) # inset axes
+axes2 = fig.add_axes([0.35, 0.5, 0.4, 0.35],xticks=np.arange(0.0,0.2+0.05,0.05),xlim=[0.0,0.2],ylim=[0.0,0.6]) # inset axes
 plt.yticks(fontsize = 12)
 plt.xticks(fontsize = 12)
 # main figure
