@@ -1,3 +1,8 @@
+import matplotlib;
+try:
+   from PyQt4 import QtCore, QtGui
+except:
+   matplotlib.use("TkAgg")
 import scipy as sp
 import numpy as np
 import pylab as pl
@@ -38,8 +43,8 @@ def discrete_func1(q,kappa,MinPath):
                k=np.sqrt(x1**2+x2**2+x3**2)
                result=result+((v**2)/sq)*((Debyek/k)**p)/(1+4*((np.sin(q0/2))**2)*(MinPath*(v/k)*((Debyek/k)**p)+(MinPath*(v/k)*((Debyek/k)**p))**2))
     result=result/(N3*N1*N2*4)*(3-p)*((np.cos(q0/2))**2)
-    ans.append(result*kappa)
-    print (i,'==',N1*N2*4*N3-1,'(N=',N3,')')
+    ans.append(result*kappa*3)
+    print i,'==',N1*N2*4*N3,'(N=',N3,')'
   return ans
 
 pl.rc('axes', linewidth=1.2)
