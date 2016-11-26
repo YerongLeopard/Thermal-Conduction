@@ -1,5 +1,5 @@
-GFORTRAN module version '0' created from crystal.f90 on Sat Nov 19 19:04:01 2016
-MD5:44e6e375a9d37c29fe61f846193d107f -- If you edit this, you'll get what you deserve.
+GFORTRAN module version '0' created from crystal.f90 on Sat Nov 19 22:19:28 2016
+MD5:8c4a2678d8a5ccb0c384c346135eb59a -- If you edit this, you'll get what you deserve.
 
 (() () () () () () () () () () () () () () () () () () () () () () () ()
 () () ())
@@ -48,7 +48,7 @@ UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE) (INTEGER 4 0 0 INTEGER ()) 0 0 () ()
 0 () () () 0 0)
 12 'w' 'statistics' 'w' 1 ((PARAMETER UNKNOWN-INTENT UNKNOWN-PROC
 UNKNOWN IMPLICIT-SAVE) (INTEGER 4 0 0 INTEGER ()) 0 0 () (CONSTANT (
-INTEGER 4 0 0 INTEGER ()) 0 '60') () 0 () () () 0 0)
+INTEGER 4 0 0 INTEGER ()) 0 '10') () 0 () () () 0 0)
 )
 
 ('mtime' 0 2 'number_of_atoms' 0 3 'slab' 0 4 'slab_temperature' 0 5

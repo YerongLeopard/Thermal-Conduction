@@ -711,12 +711,14 @@ implicit none
 double precision, dimension(DIM):: PosAtomReal,VelAtomReal,AccAtomReal!temprary variables
 integer::i=0
 integer,intent(in)::step
+character(50):: formatstr
 open(unit=1,file='input.dat',status='old',action='write')
-
 write(1,'(1X,L2,I7,3E23.15,2I7)') .TRUE.,N,BoxSize,step,Tsteps
 !slab_temperature_sum=0
 !slab_temperature_SQsum=0
-write(1,'(32E23.15)')slab_temperature_sum,slab_temperature_SQsum
+write(formatstr, *)2*SLAB
+formatstr='('//trim(adjustl(formatstr))//'E23.15)'
+write(1,formatstr)slab_temperature_sum,slab_temperature_SQsum
 101 format(1X,3E23.15)
 do i=1,N
    write(1,101) pos(:,i)*BoxSize

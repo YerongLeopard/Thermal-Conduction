@@ -44,7 +44,7 @@ module Statistics
 !  Contains statistical quantities accumulated during the run.
 !  All quantities are resetted to zero.
 !
-   integer,parameter::SLAB=128,W=60,Mtime=7!!W is the step interval for the impose,Mtime is the step interval for measuring
+   integer,parameter::SLAB=128,W=10,Mtime=7!!W is the step interval for the impose,Mtime is the step interval for measuring
    integer,dimension(0:SLAB-1):: number_of_atoms=0!!number of atoms in each slabs
    integer::Tsteps=0! counting the number of steps measuring the system
    double precision,dimension(0:SLAB-1):: slab_temperature_sum=0.d0,slab_temperature_SQsum=0.d0,slab_temperature=0.d0!!   
@@ -163,7 +163,7 @@ enddo
 !setpos=.TRUE.
 
 
-
+write(*,*) setpos ! DEBUG
 if (setpos) then
 i=1
  do l=0,127
@@ -281,11 +281,11 @@ implicit none
 title='First Program'!name of the program
 SampIn='input.dat'
 Nsteps=2000*100*6
-deltat=6.965d-3*2
+deltat=6.965d-9*2
 TRequested=-1.0d0!if TRequested<0. then at constant Energy 
 !TRequested=1150! This means that the temperature is set to be 1150K
 ConstantT = ( TRequested >= 0 )
-e=0.0811!the amplitude of the flux
+e=0.2911!the amplitude of the flux
 return   !  successful exit
 200 continue
    print*,'Read_Input: FATAL: premature end-of-file in standard input'
@@ -336,6 +336,8 @@ call Compute_Temperature
 !
 first=init+1
 last=init+Nsteps
+write(*,*) Nsteps, 'Nsteps'
+call Print_Parameters 
 time: do step=first,last
 
  !  pos = pos + deltat*vel + 0.5d0*(deltat**2)*acc      ! r(t+dt)
@@ -478,6 +480,7 @@ do i = 1,cut                                     ! looping an all pairs
       endif
    enddo
 enddo
+write(*,*) acc(1,100), 'acc(1,100)'
 end subroutine Compute_Forces
 
 subroutine Compute_Temperature
@@ -529,7 +532,7 @@ real,parameter:: PI=3.1415926535898
 !! the cold region 1:     0---SLAB/4-2
 !! the hot region 1:     SLAB/4---SLAB/2-2
 !! the hot region 2:     SLAB/2-1---SLAB*3/4-2
-!! the cold region 2:    SLAB*3/4---SLAB-1 
+!! the cold region 2:    SLAB*3/4---formatstr, *SLAB-1 
 double precision,dimension(0:SLAB/4-2)::max_sqA=0.d0
 double precision,dimension(SLAB/4:SLAB/2-2)::min_sqA=0.d0
 double precision,dimension(SLAB/2-1:SLAB*3/4-2)::min_sqB=0.d0
@@ -729,12 +732,17 @@ implicit none
 double precision, dimension(DIM):: PosAtomReal,VelAtomReal,AccAtomReal!temprary variables
 integer::i=0
 integer,intent(in)::step
+character(50):: formatstr
 open(unit=1,file='input.dat',status='old',action='write')
-
 write(1,'(1X,L2,I7,3E23.15,2I7)') .TRUE.,N,BoxSize,step,Tsteps
-!slab_temperature_sum=0
-!slab_temperature_SQsum=0
-write(1,'(256E23.15)')slab_temperature_sum,slab_temperature_SQsum
+! Initialization statistics
+! slab_temperature_sum=0  ! DEBUG
+! slab_temperature_SQsum=0
+write(formatstr, *)2*SLAB 
+! write(formatstr, *)SLAB! DEBUG 
+formatstr='('//trim(adjustl(formatstr))//'E23.15)'
+write(1,formatstr)slab_temperature_sum,slab_temperature_SQsum
+! write(1,formatstr)slab_temperature_sum
 101 format(1X,3E23.15)
 do i=1,N
    write(1,101) pos(:,i)*BoxSize
