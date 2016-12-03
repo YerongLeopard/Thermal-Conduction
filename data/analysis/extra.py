@@ -1,3 +1,8 @@
+import matplotlib;
+try:
+   from PyQt4 import QtCore, QtGui
+except:
+   matplotlib.use("TkAgg")
 import scipy as sp
 import numpy as np
 import pylab as pl
@@ -61,7 +66,7 @@ pl.figure(3)
 pl.plot(x3,c,'oy',markersize=8,label="N_z>50")
 pl.plot(x3,c,'-y',markersize=8)
 
-
+'''
 ########################################400
 data=pl.loadtxt('ABC400.dat')
 a=[]
@@ -141,6 +146,8 @@ pl.legend(loc='best')
 pl.figure(3)
 pl.plot(x3,c,'oc',markersize=8,label="N_z>1000")
 pl.plot(x3,c,'-c',markersize=8)
+'''
+
 pl.legend(loc='best')
 
 

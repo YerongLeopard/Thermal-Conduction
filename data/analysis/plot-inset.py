@@ -1,3 +1,8 @@
+import matplotlib;
+try:
+   from PyQt4 import QtCore, QtGui
+except:
+   matplotlib.use("TkAgg")
 import pylab as pl
 import matplotlib.pyplot as plt
 import scipy as sp
