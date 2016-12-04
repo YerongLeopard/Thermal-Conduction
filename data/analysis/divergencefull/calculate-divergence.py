@@ -1,3 +1,5 @@
+import sys;
+sys.path.append("../include/")
 from analysis import *
 import scipy as sp;
 import numpy as np;
