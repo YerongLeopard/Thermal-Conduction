@@ -44,7 +44,7 @@ def discrete_func1(q,kappa,MinPath):
     print i,'==',N1*N2*4*N3,'(N=',N3,')'
   return ans
 File=open('cross2.dat','w')
-q=list(np.arange(20000,20000+1,1))
+q=list(np.arange(10,99+1,1))
 for i in range(4,11,1):
   #y=discrete_func1([2*sp.pi/q0],1,0.615140781881)
   N1=i

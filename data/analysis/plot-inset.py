@@ -19,8 +19,8 @@ text5='5by5.dat'
 text4='4by4.dat'
 text3='3by3.dat'
 text2='2by2.dat'
-start=14
-end=272
+start=0
+end=172
 xx= np.linspace(0, 0.8, 10, endpoint=True) # extrapolation range
 def func(x,a,b,c): 
   return (a+b*x+c*x**2) 
@@ -254,7 +254,7 @@ for l in line[:]:
 x=[]
 for q0 in q:
      x.append(q0**w)
-y=[element * 3 for element in y] # temporary DEBUG
+#y=[element * 3 for element in y] # temporary DEBUG
 axes2.plot(x,y,'r-',linewidth=2)
 x=np.array(x)
 y=np.array(y)
@@ -268,8 +268,8 @@ print num,para[0],para[1],para[2]
 x1=np.arange(0.025,0.79,0.025)
 axes1.plot(x1,func1(x1,para[0],para[1],para[2]),'ro',linewidth=2)
 print xx
-print func1(xx,0,para[1],para[2])
-axes1.plot(xx,lin(xx,para[1],para[2]),'r--',linewidth=2)
+#print func1(xx,0,para[1],para[2])
+axes1.plot(x,lin(x,para[1],para[2]),'r--',linewidth=2)
 num-=1
 
 line=pl.loadtxt(text5)
@@ -281,7 +281,7 @@ for l in line[:]:
 x=[]
 for q0 in q:
      x.append(q0**w)
-y=[element * 3 for element in y] # temporary DEBUG
+#y=[element * 3 for element in y] # temporary DEBUG
 #axes2.plot(x,y,'c-',linewidth=2)
 x=np.array(x)
 y=np.array(y)
@@ -305,7 +305,7 @@ for l in line[:]:
 x=[]
 for q0 in q:
      x.append(q0**w)
-y=[element * 3 for element in y] # temporary DEBUG
+#y=[element * 3 for element in y] # temporary DEBUG
 axes2.plot(x,y,'b-',linewidth=2)
 x=np.array(x)
 y=np.array(y)
@@ -331,7 +331,7 @@ for l in line[:]:
 x=[]
 for q0 in q:
      x.append(q0**w)
-y=[element * 3 for element in y] # temporary DEBUG
+#y=[element * 3 for element in y] # temporary DEBUG
 axes2.plot(x,y,'k-',linewidth=2)
 
 x=np.array(x)
@@ -357,7 +357,7 @@ for l in line[:]:
 x=[]
 for q0 in q:
      x.append(q0**w)
-y=[element * 3 for element in y] # temporary DEBUG
+#y=[element * 3 for element in y] # temporary DEBUG
 axes2.plot(x,y,'g-',linewidth=2)
 x=np.array(x)
 y=np.array(y)
