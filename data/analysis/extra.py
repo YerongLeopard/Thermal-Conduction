@@ -80,7 +80,8 @@ for tick in ax.yaxis.get_major_ticks():
     tick.label1.set_fontsize(12)
     tick.label1.set_fontweight('bold')
 
-pl.legend(loc='best')
+pl.legend(loc='best',fontsize=24)
+
 pl.figure(2)
 pl.plot(x2,b,'oy',markersize=8,label="$N_x>50$")
 pl.plot(x2,b,'-y',markersize=8)
@@ -99,13 +100,10 @@ for tick in ax.yaxis.get_major_ticks():
     tick.label1.set_fontsize(12)
     tick.label1.set_fontweight('bold')
 
-pl.legend(loc='best')
-
-
 pl.figure(3)
 pl.plot(x3,c,'oy',markersize=8,label="$N_x>50$")
 pl.plot(x3,c,'-y',markersize=8)
-pl.legend(loc='best')
+pl.legend(loc='best',fontsize=24)
 
 ax = plt.gca()
 # Customize tick marks
@@ -120,7 +118,7 @@ for tick in ax.yaxis.get_major_ticks():
     tick.label1.set_fontsize(12)
     tick.label1.set_fontweight('bold')
 
-pl.legend(loc='best')
+pl.legend(loc='best',fontsize=24)
 ########################################400
 data=pl.loadtxt('ABC400.dat')
 a=[]
